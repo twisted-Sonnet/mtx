@@ -31,11 +31,14 @@ class SymbolColumn:
 
 
 os.environ['SDL_VIDEO_CENTERED'] = '1'
-RES = WIDTH, HEIGHT = 1920, 1080
+pg.init()
+
+info = pygame.display.Info()
+
+RES = WIDTH, HEIGHT = info.current_w, info.current_h
 FONT_SIZE = 40
 alpha_value = 0
 
-pg.init()
 screen = pg.display.set_mode((0, 0), pygame.FULLSCREEN)
 surface = pg.Surface(RES)
 surface.set_alpha(alpha_value)
